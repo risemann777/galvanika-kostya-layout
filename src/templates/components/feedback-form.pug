@@ -1,0 +1,48 @@
+include ../mixins/checkbox
+
+form.form.form--feedback
+  input(type='hidden' name='form_type' value='feedback')
+  input(type='hidden' name='form_place' value='Страница "Контакты"')
+  .form__row
+    .form__field
+      .form__input
+        label
+          .form__label Имя и фамилия *
+          input(type="text" name="fio").form__control
+    .form__field
+      .form__input
+        label
+          .form__label Телефон *
+          input(type="text" name="phone").form__control
+    .form__field
+      .form__input
+        label
+          .form__label E-mail *
+          input(type="text" name="email").form__control
+    .form__field
+      .form__input
+        label
+          .form__label Компания *
+          input(type="text" name="company").form__control
+  .form__field
+    .form__input.form__input--select
+      label
+        .form__label Категория
+        select(name="category").form__control
+          option Сервисы
+          option Карьера
+          option PR
+          option Другое
+  .form__field
+    .form__input.form__input--textarea
+      label
+        .form__label Комментарий
+        textarea(name="comment").form__control
+  .form__field
+    +checkbox({
+      text: "",
+      name: "policy"
+    })
+  .form__message
+  .form__bottom
+    button(type="submit" disabled).btn.btn--lg.btn--outline-primary Отправить

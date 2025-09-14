@@ -1,0 +1,14 @@
+mixin mixin-template(data)
+  - mClass = 'mixin-template'
+  - modifiers = data.modifiers || null
+  - strModifiers = ''
+
+  - title = data?.title || 'Mixin template title'
+
+  if (modifiers && modifiers.length > 0)
+    each modifier, index in modifiers
+      - strModifiers += index === 0 ? `${mClass}--${modifier}`: ` ${mClass}--${modifier}`
+
+  div(class=`${mClass}${strModifiers && ` `+strModifiers}`)
+    div(class=`${mClass}__container`)
+      div(class=`${mClass}__title`)=title

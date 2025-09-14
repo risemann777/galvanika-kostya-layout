@@ -1,0 +1,13 @@
+.main-menu
+  nav.main-menu__nav
+    .main-menu__item
+      a(href="solutions.html" class=pageName === 'solutions' ? 'main-menu__link--active':'').main-menu__link
+        span Решения
+    .main-menu__item
+      a(href="company.html" class=pageName === 'company' ? 'main-menu__link--active':'').main-menu__link
+        span О компании
+    .main-menu__item
+      a(href="contacts.html" class=pageName === 'contacts' ? 'main-menu__link--active':'').main-menu__link
+        span Контакты
+  .main-menu__bottom
+    .btn.btn--lg.btn--primary(data-toggle='drawer-form') Связаться с нами

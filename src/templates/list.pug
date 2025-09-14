@@ -1,0 +1,21 @@
+extends layouts/main/layout
+
+block vars
+  - browserTitle = 'Список страниц'
+  - pageTitle = 'Список страниц'
+  - headlineText = "This is the list of all pages"
+
+block content
+  .carbon
+    .carbon__list
+      .carbon__item
+        h2 Интерфейс и типографика
+        ul
+          li: a(href="docs.html") GUI
+      .carbon__item
+        h2 Color palette
+        ul
+          li: a(href="palette.html") Color palette
+
+
+

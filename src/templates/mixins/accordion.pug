@@ -1,0 +1,30 @@
+mixin accordion(data)
+  - mClass = 'accordion'
+  - idWord = data?.id || 'example'
+  - idCapitalizedWord = idWord.charAt(0).toUpperCase() + idWord.slice(1)
+  - modifiers = data.modifiers || null
+  - strModifier = ''
+  - sections = data.sections || null
+  - contentWrapperClass = data.contentWrapperClass || 'accordion-content-wrapper'
+
+  if (modifiers && modifiers.length > 0)
+    each modifier, index in modifiers
+      - strModifier += index === 0 ? `${mClass}--${modifier}`: ` ${mClass}--${modifier}`
+
+  div(class=`${mClass}${strModifier ? ` ` + strModifier : ``}`)
+    .accordion__list
+      if (sections && sections.length > 0)
+        each section, index in sections
+          - expanded = section?.expanded || null
+          - sectionName = section?.name || `Section name #${index+1}`
+          - content = section?.content || `<p>Some testing content in paragraph</p>`
+          .accordion__item(class=expanded ? 'accordion__item--expanded':'')
+            .accordion__head(aria-expanded="false" aria-controls=`accordion${idCapitalizedWord}Section_${index+1}`)
+              .accordion__info
+                .accordion__name=sectionName
+              .accordion__arrow
+                svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-accordion-arrow-down")
+            .accordion__collapse
+              .accordion__body!=content
+
+

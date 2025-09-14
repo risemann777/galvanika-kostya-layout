@@ -1,0 +1,26 @@
+.palette {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__view {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  &__name {
+    flex: 0 0 120px;
+  }
+
+  &__code {
+    flex: 0 0 65px;
+  }
+}

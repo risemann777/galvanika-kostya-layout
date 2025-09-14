@@ -1,0 +1,60 @@
+extends layouts/main/layout
+include mixins/service
+
+block vars
+  - browserTitle = 'Услуги'
+  - pageTitle = 'Услуги';
+  - breadcrumb = [{name: 'Услуги'}]
+
+block content
+  +service({
+    list: [
+      {
+        name: 'Хромирование',
+        image: 'images/service/service_01.png',
+        price: 'от 150 р. за 1 дм²'
+      },
+      {
+        name: 'Никелирование',
+        image: 'images/service/service_02.png',
+        price: 'от 50 р. за 1 дм²'
+      },
+      {
+        name: 'Анодирование алюминия',
+        image: 'images/service/service_03.png'
+      },
+      {
+        name: 'Меднение',
+        image: 'images/service/service_04.png'
+      },
+      {
+        name: 'Цинкование',
+        image: 'images/service/service_05.png'
+      },
+      {
+        name: 'Кадмирование',
+        image: 'images/service/service_06.png'
+      },
+      {
+        name: 'Фосфатирование'
+      },
+      {
+        name: 'Оловянение',
+        image: 'images/service/service_08.png'
+      },
+      {
+        name: 'Оксидация алюминия'
+      },
+      {
+        name: 'Химическая пассивация'
+      },
+      {
+        name: 'Электрополировка нержавейки',
+        image: 'images/service/service_11.png'
+      },
+      {
+        name: 'Оксидация металла',
+        image: 'images/service/service_12.png'
+      }
+    ]
+  })

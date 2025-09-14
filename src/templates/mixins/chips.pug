@@ -1,0 +1,9 @@
+mixin chips(data)
+  - items = data.items || null
+  .chips
+    .chips__list
+      if items
+        each item in items
+          label.chips__item
+            input(type="checkbox" name="projects" value=item.name checked=item.checked)
+            span=item.name

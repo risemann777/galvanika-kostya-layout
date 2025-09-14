@@ -1,0 +1,48 @@
+.hamburger {
+  --mi-hamburger-color: var(--mi-white);
+
+  position: relative;
+  z-index: 25;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+
+  &::before, &::after {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 40px;
+    height: 1px;
+    border-radius: 1.5px;
+    background-color: var(--mi-hamburger-color);
+    content: "";
+    pointer-events: none;
+    transition: all 0.2s;
+  }
+
+  &::before {
+    top: 9px;
+  }
+
+  &::after {
+    bottom: 9px;
+  }
+}
+
+.mobile-menu-opened {
+  .hamburger {
+    &::before, &::after {
+      background: var(--mi-color-orange);
+    }
+
+    &::before {
+      top: 14px;
+      transform: rotate(25deg);
+    }
+
+    &::after {
+      bottom: 14px;
+      transform: rotate(-25deg);
+    }
+  }
+}

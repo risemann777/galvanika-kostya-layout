@@ -1,0 +1,93 @@
+.mobile-menu {
+  --mi-mobile-menu-z-index: 400;
+  --mi-mobile-menu-bg: var(--mi-background);
+  --mi-mobile-menu-transform: translateX(100%);
+  --mi-mobile-menu-opacity: 1;
+  --mi-mobile-menu-transition: transform 0.25s;
+  --mi-mobile-menu-backdrop-opacity: 0;
+  --mi-mobile-menu-backdrop-bg: rgb(0 0 0 / 15%);
+  --mi-mobile-menu-backdrop-transition: 0.25s;
+  --mi-mobile-menu-container-padding: var(--mobile-menu-container-padding, 4rem);
+
+  position: fixed;
+  z-index: var(--mi-mobile-menu-z-index);
+  top: 0;
+  left: 0;
+  display: none;
+  overflow: hidden auto;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+
+  &--show {
+    --mi-mobile-menu-backdrop-opacity: 1;
+    --mi-mobile-menu-transform: none;
+  }
+  
+  &__backdrop {
+    position: fixed;
+    background: var(--mi-mobile-menu-backdrop-bg);
+    inset: 0;
+    opacity: var(--mi-mobile-menu-backdrop-opacity);
+    transition: var(--mi-mobile-menu-backdrop-transition);
+  }
+
+  &__container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 360px;
+    height: 100vh;
+    padding-top: var(--mi-mobile-menu-container-padding);
+    background: var(--mi-mobile-menu-bg);
+    transform: var(--mi-mobile-menu-transform);
+    transition: var(--mi-mobile-menu-transition);
+  }
+
+  &__content {
+    display: flex;
+    width: min(400px, 100% - 2.5rem);
+    height: 100%;
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 3rem;
+    margin-inline: auto;
+    outline: 0;
+    overflow-y: auto;
+    pointer-events: auto;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__item {
+    margin: 0 0 0.4rem;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0.1rem 0;
+    font-family: var(--mi-heading-font-family);
+    font-size: 1.25rem;
+
+    &:visited {
+      color: var(--mi-foreground);
+    }
+
+    &:hover {
+      color: var(--mi-foreground);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

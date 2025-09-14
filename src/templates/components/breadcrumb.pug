@@ -1,0 +1,13 @@
+ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+  li(itemscope itemtype="http://schema.org/ListItem").breadcrumb-item
+    a(href="/" itemprop="item"): svg(class="svg-icon" viewBox="0 0 13 13" width="13" height="13"): use(xlink:href="#svg-breadcrumb-home")
+    meta(itemprop="position" content="1")
+    meta(itemprop="name" content="Главная")
+  li(itemscope itemtype="http://schema.org/ListItem").breadcrumb-item
+    a(href="news.html" itemprop="item") Новости
+    meta(itemprop="position" content="2")
+    meta(itemprop="name" content="Новости")
+  li(itemscope itemtype="http://schema.org/ListItem").breadcrumb-item.active
+    span(itemprop="item") Заголовок
+    meta(itemprop="position" content="3")
+    meta(itemprop="name" content="Заголовок")

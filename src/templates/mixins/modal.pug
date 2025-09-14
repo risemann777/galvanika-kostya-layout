@@ -1,0 +1,49 @@
+mixin modal(data)
+  - id = data?.id || "exampleModal"
+  - title = data?.title || "Modal title"
+  - footerButtons = data?.footerButtons || null
+
+  - blockClass = 'modal'
+  - closeCls = `${blockClass}__close`
+  - backdropClass = `${blockClass}__backdrop`
+  - dialogClass = `${blockClass}__dialog`
+  - contentClass = `${blockClass}__content`
+  - headerClass = `${blockClass}__header`
+  - titleClass = `${blockClass}__title`
+  - bodyCls = `${blockClass}__body`
+  - footerCls = `${blockClass}__footer`
+
+  - modalModifiers = data?.modalModifiers || null
+  - modalModifierStr = ''
+
+  if (modalModifiers && modalModifiers.length > 0)
+    - modalModifierStr = modalModifiers.join(" ")
+
+  - dialogModifiers = data?.dialogModifiers || null
+  - dialogModifierStr = ''
+
+  if (dialogModifiers && dialogModifiers.length > 0)
+    each dialogModifier, index in dialogModifiers
+      - dialogModifierStr += index === 0 ? `${dialogClass}--${dialogModifier}`: ` ${dialogClass}--${dialogModifier}`
+
+  - backdropModifiers = data?.backdropModifiers || null
+  - backdropModifiersStr = ''
+
+  if (backdropModifiers && backdropModifiers.length > 0)
+    each backdropModifier, index in backdropModifiers
+      - backdropModifiersStr += index === 0 ? `${backdropClass}--${backdropModifier}`: ` ${backdropClass}--${backdropModifier}`
+
+  div(class=`${blockClass}${modalModifierStr && " "+modalModifierStr}` id=id tabindex="-1" aria-labelledby=`${id}Label` aria-hidden="true" data-lenis-prevent="true")
+    div(class=`${backdropClass}${backdropModifiersStr && " "+backdropModifiersStr}` data-dismiss="modal")
+    div(class=`${dialogClass}${dialogModifierStr && " "+dialogModifierStr}`)
+      div(class=`${contentClass}`)
+        button(class=`${closeCls}` type="button" data-dismiss="modal" aria-label="close")
+        div(class=`${headerClass}`)
+          h1(class=`${titleClass}`)=title
+        if block
+          div(class=`${bodyCls}`)
+            block
+        if (footerButtons)
+          div(class=`${footerCls}`)
+            button(type="button" class="btn btn--secondary") Close
+            button(type="button" class="btn btn--primary") Save changes

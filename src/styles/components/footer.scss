@@ -1,0 +1,14 @@
+.footer {
+  position: relative;
+  background: #e7e7e7;
+
+  &__container {
+    width: min(13200px, 100% - 3rem);
+    margin-inline: auto;
+  }
+
+  &__content {
+    padding: 1rem 0;
+    text-align: center;
+  }
+}

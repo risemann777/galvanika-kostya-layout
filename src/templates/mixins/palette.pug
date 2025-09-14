@@ -1,0 +1,14 @@
+mixin palette(data)
+  - list = data?.list || null
+  .palette
+    .palette__list
+      if (list && list.length)
+        each item in list
+          - nameEn = item?.name_en || 'Name'
+          - nameRu = item?.name_ru || 'Название цвета'
+          - colorCode = item?.colorCode || null
+          - cssVar = item?.cssVar || null
+          .palette__item(title=`${nameRu}`)
+            .palette__name=nameEn
+            .palette__code=colorCode
+            .palette__view(style=`background-color:var(${cssVar})`)

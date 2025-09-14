@@ -1,0 +1,11 @@
+.svg-icon {
+  font-size: 1rem;
+  
+  use {
+    fill: currentcolor;
+  }
+
+  &--blue {
+    color: blue;
+  }
+}

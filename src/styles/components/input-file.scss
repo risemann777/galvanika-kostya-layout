@@ -1,0 +1,35 @@
+.input-file {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--mi-input-border-color);
+  border-radius: 20px;
+  column-gap: 10px;
+  cursor: pointer;
+  font-family: var(--mi-body-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  user-select: none;
+
+  input {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  span {
+    color: var(--mi-foreground);
+  }
+
+  .svg-icon {
+    flex-shrink: 0;
+
+    use {
+      stroke: currentcolor;
+    }
+  }
+}

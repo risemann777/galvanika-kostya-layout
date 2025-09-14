@@ -1,0 +1,53 @@
+:root {
+  --mi-body-font-family: "Raleway", sans-serif;
+  --mi-body-font-size: 1rem;
+  --mi-body-font-weight: 400;
+  --mi-body-line-height: 1.4;
+  --mi-foreground: #212529;
+  --mi-background: rgb(245 245 245 / 80%);
+  --mi-container-size: 1650px;
+  --mi-container-padding: 2.5rem;
+  --mi-container-width: min(var(--mi-container-size), 100% - var(--mi-container-padding));
+  --mi-corporate-red: var(--mi-color-scarlet);
+  --mi-corporate-yellow: #ff9100;
+  --mi-heading-font-family: var(--mi-body-font-family);
+  --mi-code-color: #d63384;
+  --mi-highlight-color: #000;
+  --mi-highlight-bg: #ffd61e;
+  --mi-link-color: #1a0dab;
+  --mi-link-hover-color: #1a0dab;
+  --mi-link-visited-color: #681da8;
+  --mi-link-opacity: 1;
+  --mi-link-decoration: none;
+  --mi-border-radius: 0.75rem;
+  --mi-dt-font-weight: 500;
+  --mi-font-weight-bolder: bolder;
+  --mi-small-font-size: 0.625rem;
+  --mi-mark-padding: .2rem .4rem;
+  --mi-sub-sup-font-size: 0.625rem;
+  --mi-link-hover-decoration: none;
+  --mi-table-cell-padding-y: 4px;
+  --mi-table-caption-color: var(--mi-foreground);
+  --mi-table-th-font-weight: 500;
+  --mi-legend-margin-bottom: 1rem;
+  --mi-legend-font-size: 1rem;
+  --mi-legend-font-weight: 500;
+  --mi-header-border-color: #000;
+  --mi-input-border-color: #dfdfdf;
+  --mi-border-width: 1px;
+  --mi-box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  --mi-border-color-translucent: rgb(0 0 0 / 15%);
+  --mi-border-color: #dee2e6;
+  --mi-backdrop-opacity: 0.5;
+  --mi-image-placeholder-bg: rgb(0 0 0 / 10%);
+  --mi-card-bg: rgb(255 255 255 / 100%);
+
+  @media(width >= 1024px) {
+    --mi-container-padding: 5rem;
+  }
+}
+
+[data-theme="dark"] {
+  --mi-foreground: #fff;
+  --mi-background: #212529;
+}

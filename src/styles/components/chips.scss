@@ -1,0 +1,51 @@
+.chips {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      border: 1px solid #fff;
+      border-radius: 25px;
+      font-size: 14px;
+      transition: 0.25s;
+      user-select: none;
+      white-space: nowrap;
+
+      @media(width >= 576px) {
+        font-size: 16px;
+      }
+
+      @media(width >= 1200px) {
+        padding: 15px 25px;
+        font-size: 24px;
+      }
+    }
+
+    &:hover {
+      span {
+        background: rgb(255 255 255 / 30%);
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+
+      &:checked {
+        & ~ span {
+          background: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+}

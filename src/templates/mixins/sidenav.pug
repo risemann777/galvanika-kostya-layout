@@ -1,0 +1,18 @@
+mixin sidenav(data)
+  - groups = data.groups || null
+  nav.sidenav
+    if groups && groups.length
+      ul.sidenav__list
+        each group, index in groups
+          - headName = group?.head?.name
+          - list = group?.list || null
+          li.sidenav__group
+            if headName
+              span.sidenav__head
+                span=headName
+            if list && list.length
+              ul
+                each item, index in list
+                  - itemName = item?.name
+                  - itemHref = item?.href
+                  li: a(href=itemHref)=itemName

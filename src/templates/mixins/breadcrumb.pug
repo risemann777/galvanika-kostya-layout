@@ -1,0 +1,18 @@
+mixin breadcrumb(data)
+  - items = data?.items || null
+
+  .breadcrumb.layout__breadcrumb
+    ol.breadcrumb__list(itemscope itemtype="http://schema.org/BreadcrumbList" class=data.class_modifier)
+      li(itemscope itemtype="http://schema.org/ListItem").breadcrumb__item
+        a(href="/" itemprop="item"): span Главная
+        meta(itemprop="position" content="1")
+        meta(itemprop="name" content="Главная")
+      if (items && items.length)
+        each item, index in items
+          li(itemscope itemtype="http://schema.org/ListItem").breadcrumb__item
+            if item.link
+              a(href=item.link itemprop="item"): span=item.name
+            else
+              span(itemprop="item")= item.name
+            meta(itemprop="position" content=index+2)
+            meta(itemprop="name" content=item.name)

@@ -1,0 +1,38 @@
+include ../mixins/checkbox
+
+form.form.form--resume
+  input(type='hidden' name='form_type' value='example_type')
+  .form__row
+    .form__field
+      .form__input
+        label
+          .form__label Имя и фамилия *
+          input(type="text" name="fio").form__control
+    .form__field
+      .form__input
+        label
+          .form__label Телефон *
+          input(type="text" name="phone").form__control
+    .form__field
+      .form__input
+        label
+          .form__label E-mail *
+          input(type="text" name="email").form__control
+  .form__field
+    .form__input.form__input--textarea
+      label
+        .form__label Комментарий
+        textarea(name="comment").form__control
+  .form__field
+    label.input-file
+      input(type="file" name="resume" accept=".doc,.docx,.pdf")
+      svg(class="svg-icon" viewBox="0 0 25 24" width="25" height="24"): use(xlink:href="#svg-icon-paperclip")
+      span(data-initial-name="Прикрепить файл") Прикрепить файл
+  .form__field
+    +checkbox({
+      text: "",
+      name: "policy"
+    })
+  .form__message
+  .form__bottom
+    button(type="submit" disabled).btn.btn--lg.btn--outline-primary Отправить

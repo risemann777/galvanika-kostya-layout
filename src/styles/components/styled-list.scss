@@ -1,0 +1,28 @@
+.styled-list {
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 0 5px;
+
+    &::before {
+      margin: 0 8px 0 0;
+    }
+  }
+
+  &--checks {
+    li {
+      &::before {
+        content: "\2714";
+      }
+    }
+  }
+
+  &--arrow {
+    li {
+      &::before {
+        content: "\2192";
+      }
+    }
+  }
+}

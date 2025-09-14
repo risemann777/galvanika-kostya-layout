@@ -1,0 +1,22 @@
+.headline {
+  --mi-headline-title-font-size: calc(1.425rem + 2.1vw);
+  --mi-headline-text-font-size: calc(1.275rem + .3vw);
+
+  @media(width >= 1200px) {
+    --mi-headline-title-font-size: 3rem;
+    --mi-headline-text-font-size: 1.5rem;
+  }
+  
+  &__title {
+    margin: 0;
+    font-feature-settings: 'lnum';
+    font-size: var(--mi-headline-title-font-size);
+  }
+
+  &__text {
+    max-width: 860px;
+    font-size: var(--mi-headline-text-font-size);
+    font-weight: 300;
+    line-height: 1.25;
+  }
+}

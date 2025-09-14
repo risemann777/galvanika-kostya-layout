@@ -1,0 +1,48 @@
+.breadcrumb {
+  --mi-breadcrumb-font-size: 0.875rem;
+
+  @media(width >= 1024px) {
+    --mi-breadcrumb-font-size: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    gap: 0.75rem 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 10px;
+    font-feature-settings: 'lnum';
+    font-size: var(--mi-breadcrumb-font-size);
+    line-height: 1.2;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    span {
+      white-space: normal;
+    }
+
+    & > span {
+      color: var(--mi-color-orange);
+    }
+
+    &:not(:last-child) {
+      span {
+        padding-right: 10px;
+      }
+
+      &::after {
+        content: "/"
+      }
+    }
+
+    a {
+      border-bottom: none;
+      color: inherit;
+    }
+  }
+}

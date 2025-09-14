@@ -1,0 +1,41 @@
+mixin form(data)
+  - title = data?.title || null
+  - subtitle = data?.subtitle || null
+  - fields = data?.fields || null
+  - modifiers = data?.modifiers || null
+  - strModifier = ''
+
+  if (modifiers && modifiers.length)
+    - strModifier = modifiers.join(" ")
+
+  form.form(class=`${strModifier}`)
+    if (title || subtitle)
+      .form__header
+        if (title)
+          .form__title=title
+        if (subtitle)
+          .form__subtitle=subtitle
+    if (fields)
+      .form__body
+        each field, index in fields
+          - type = field?.type || 'text'
+          - name = field?.name || 'name_example'
+          - label = field?.label || 'Label'
+          - placeholder = field?.placeholder || label || 'Placeholder'
+          - error = field?.error || null
+          - autocomplete = field?.autocomplete || 'off'
+          .form__field
+            .form__input(class=error && `form__input--error`)
+              if (type === 'text' || type === 'tel')
+                label
+                  span.form__label=label
+                  input(type=type name=name placeholder=placeholder autocomplete=autocomplete).form__control
+              if (type === 'textarea')
+                label
+                  span.form__label=label
+                  textarea(name=name placeholder=placeholder).form__control.form__control--textarea
+              if (error)
+                .form__input-error-text=error
+      .form__footer
+        button(type="button" class="btn btn--primary") Отправить
+        .form__policy Нажимая на кнопку вы даете согласие на обработку своих персональных данных.

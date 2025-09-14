@@ -1,0 +1,108 @@
+.accordion {
+  --mi-accordion-head-padding-x: 1.25rem;
+  --mi-accordion-head-padding-y: 1rem;
+  --mi-accordion-body-padding-x: 1.25rem;
+  --mi-accordion-body-padding-y: 1rem;
+  --mi-accordion-border-width: var(--mi-border-width);
+  --mi-accordion-border-color: var(--mi-border-color);
+  --mi-accordion-head-bg: none;
+  --mi-accordion-name-font-size: 1rem;
+  --mi-accordion-arrow-bg: none;
+  --mi-accordion-arrow-transform: none;
+  --mi-accordion-collapse-display: none;
+  --mi-accordion-body-opacity: 0;
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--mi-accordion-head-padding-y) var(--mi-accordion-head-padding-x);
+    background: var(--mi-accordion-head-bg);
+    column-gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  &__info {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+  }
+
+  &__name {
+    color: var(--mi-foreground);
+    font-size: var(--mi-accordion-name-font-size);
+    user-select: none;
+  }
+
+  &__collapse {
+    display: var(--mi-accordion-collapse-display);
+
+    &--collapsing {
+      overflow: hidden;
+      height: 0;
+      transition: height 0.35s ease;
+    }
+  }
+
+  &__body {
+    padding: var(--mi-accordion-body-padding-y) var(--mi-accordion-body-padding-x);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--mi-accordion-arrow-bg);
+    transform: var(--mi-accordion-arrow-transform);
+    transition: transform 0.3s;
+
+    svg {
+      use {
+        fill: none;
+        stroke: currentcolor;
+      }
+    }
+  }
+
+  &__item {
+    border: var(--mi-accordion-border-width) solid var(--mi-accordion-border-color);
+
+    &:last-child {
+      border-bottom: 1px solid var(--mi-accordion-border-color);
+    }
+
+    &:not(:first-of-type) {
+      border-top: 0;
+    }
+
+    &--expanded {
+      --mi-accordion-arrow-transform: scale3d(1, -1, 1);
+      --mi-accordion-body-opacity: 1;
+      --mi-accordion-collapse-display: block;
+      --mi-accordion-head-bg: #dfdfdf;
+
+      .accordion {
+        &__body {
+          animation: fadeIn 0.4s 0.1s both;
+        }
+      }
+    }
+  }
+}

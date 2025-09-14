@@ -1,0 +1,11 @@
+mixin checkbox(data)
+  - obData = data || null
+  .checkbox
+    label
+      input(type="checkbox" name=obData.name checked=obData.checked)
+      .checkbox__cr
+      .checkbox__text
+        if (!obData.text)
+          | Я подтверждаю принятие <a href="policy.html" target="_blank">Политики конфиденциальности</a> и соглашаюсь на обработку персональных данных
+        else
+          span #{obData.text}

@@ -1,0 +1,81 @@
+{
+  "name": "gulp-builder",
+  "version": "1.0.0",
+  "description": "Gulp builder",
+  "main": "gulpfile.js",
+  "type": "module",
+  "browserslist": [
+    "> 1%"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp default",
+    "build": "set NODE_ENV=production && gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risemann777/gulp-builder.git"
+  },
+  "author": {
+    "name": "SemenOn"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/register": "^7.25.9",
+    "@eslint/js": "^9.17.0",
+    "axios": "^1.7.9",
+    "babel-loader": "^9.2.1",
+    "browser-sync": "^3.0.3",
+    "core-js": "^3.39.0",
+    "css-loader": "^7.1.2",
+    "dotenv": "^16.4.7",
+    "emitty": "^1.4.1",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-changed": "^5.0.2",
+    "gulp-debug": "^5.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^6.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "imask": "^7.6.1",
+    "lenis": "^1.1.18",
+    "less-loader": "^12.2.0",
+    "path": "^0.12.7",
+    "postcss-lit": "^1.2.0",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.10.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "cookies-utils": "^1.0.0",
+    "del": "^8.0.0",
+    "express": "^4.21.2",
+    "formidable": "^3.5.2",
+    "fs": "^0.0.1-security",
+    "swiper": "^11.2.0"
+  }
+}
