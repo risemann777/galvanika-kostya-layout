@@ -1,6 +1,6 @@
 .mobile-menu {
   --mi-mobile-menu-z-index: 400;
-  --mi-mobile-menu-bg: var(--mi-background);
+  --mi-mobile-menu-bg: #fff;
   --mi-mobile-menu-transform: translateX(100%);
   --mi-mobile-menu-opacity: 1;
   --mi-mobile-menu-transition: transform 0.25s;
@@ -73,8 +73,7 @@
     display: block;
     overflow: hidden;
     padding: 0.1rem 0;
-    font-family: var(--mi-heading-font-family);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 
     &:visited {
       color: var(--mi-foreground);
