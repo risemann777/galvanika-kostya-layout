@@ -1,0 +1,10 @@
+.db-content {
+  --mi-db-content-font-size: 1rem;
+
+  font-feature-settings: 'lnum';
+  font-size: var(--mi-db-content-font-size);
+
+  @media(width >= 1366px) {
+    --mi-db-content-font-size: 1.25rem;
+  }
+}

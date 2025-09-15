@@ -1,23 +1,52 @@
 mixin service(data)
   - list = data?.list || null
+  - type = data?.type || 'list'
+  - navigation = data?.navigation || null
 
   .service
-    .service__container
-      .service__list
-        if list && list.length
-          each item, index in list
-            - name = item?.name || `Service name #${index+1}`
-            - image = item?.image || null
-            - price = item?.price || 'от 999 руб. за 1 дм<sup>2</sup>'
-            - link = item?.link || `uslugi-detail.html?id=${index+1}`
-            .service-card.service__item
-              .service-card__media
-                a(href=link).service-card__clickable
-                picture.service-card__picture
-                  if image
-                    img(src=image)
-              .service-card__info
-                .service-card__name=name
-                .service-card__bottom
-                  .service-card__price!=price
-                  a(href=link).service-card__more Подробнее >>
+    if type === 'list'
+      .service__container
+        .service__list
+          if list && list.length
+            each item, index in list
+              - name = item?.name || `Service name #${index+1}`
+              - image = item?.image || null
+              - price = item?.price || 'от 999 руб. за 1 дм<sup>2</sup>'
+              - link = item?.link || `uslugi-detail.html?id=${index+1}`
+              .service-card.service__item
+                .service-card__media
+                  a(href=link).service-card__clickable
+                  picture.service-card__picture
+                    if image
+                      img(src=image)
+                .service-card__info
+                  .service-card__name=name
+                  .service-card__bottom
+                    .service-card__price!=price
+                    a(href=link).service-card__more Подробнее >>
+
+    if type === 'slider'
+      .service__slider.swiper
+        .swiper-wrapper
+          if list && list.length
+            each item, index in list
+              .swiper-slide
+                - name = item?.name || `Service name #${index+1}`
+                - image = item?.image || null
+                - price = item?.price || 'от 999 руб. за 1 дм<sup>2</sup>'
+                - link = item?.link || `uslugi-detail.html?id=${index+1}`
+                .service-card
+                  .service-card__media
+                    a(href=link).service-card__clickable
+                    picture.service-card__picture
+                      if image
+                        img(src=image)
+                  .service-card__info
+                    .service-card__name=name
+                    .service-card__bottom
+                      .service-card__price!=price
+                      a(href=link).service-card__more Подробнее >>
+        .swiper-pagination
+        if navigation
+          .swiper-button-prev
+          .swiper-button-next

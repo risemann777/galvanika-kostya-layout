@@ -30,3 +30,19 @@
     }
   }
 }
+
+.swiper-button-next, .swiper-button-prev {
+  --swiper-navigation-color: var(--mi-foreground);
+  --swiper-navigation-size: 50px;
+  --swiper-navigation-top-offset: 44%;
+  --swiper-navigation-sides-offset: 15px;
+
+  width: var(--swiper-navigation-size);
+  height: var(--swiper-navigation-size);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 60%);
+
+  &::after {
+    font-size: 30px;
+  }
+}
