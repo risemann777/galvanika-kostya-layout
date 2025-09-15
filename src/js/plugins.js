@@ -3,7 +3,7 @@ import {Pagination} from 'swiper/modules'
 import inputMask from "./modules/inputMask.js"
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.slider', {
+  new Swiper('.hero__slider', {
     modules: [Pagination],
     pagination: {
       el: '.swiper-pagination',
