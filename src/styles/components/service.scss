@@ -11,8 +11,8 @@
   border-radius: var(--mi-border-radius);
   background: var(--mi-card-bg);
 
-  @media(width >= 1366px) {
-    --mi-service-card-name-font-size: 1.25rem;
+  @media(width >= 1280px) {
+    --mi-service-card-name-font-size: 1.5rem;
     --mi-service-card-text-font-size: 1rem;
   }
 
@@ -52,7 +52,7 @@
     margin: 0;
     font-feature-settings: 'lnum';
     font-size: var(--mi-service-card-name-font-size);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
   }
 
@@ -84,6 +84,7 @@
     padding: 0.25rem 0;
     color: var(--mi-corporate-red);
     font-size: var(--mi-service-card-text-font-size);
+    font-weight: 500;
     text-decoration: none;
 
     &::after {

@@ -24,7 +24,6 @@ mixin service(data)
                   .service-card__bottom
                     .service-card__price!=price
                     .service-card__action
-                      button(class="btn btn--red service-card__order-btn") Заказать
                       a(href=link).service-card__more Подробнее >>
 
     if type === 'slider'
@@ -47,7 +46,8 @@ mixin service(data)
                     .service-card__name=name
                     .service-card__bottom
                       .service-card__price!=price
-                      a(href=link).service-card__more Подробнее >>
+                      .service-card__action
+                        a(href=link).service-card__more Подробнее >>
         .swiper-pagination
         if navigation
           .swiper-button-prev
