@@ -2,11 +2,15 @@
   --mi-section-container-padding-top: 3rem;
   --mi-section-container-padding-bottom: 3rem;
   --mi-section-title-font-size: 2.75rem;
-  --mi-section-head-margin: 0 0 1.25rem;
+  --mi-section-head-margin: 0 0 2rem;
 
-  @media(width >= 1366px) {
+  @media(width >= 1280px) {
     --mi-section-title-font-size: 4rem;
-    --mi-section-head-margin: 0 0 2rem;
+    --mi-section-head-margin: 0 0 3rem;
+  }
+
+  &--stage {
+    background: var(--mi-background-secondary);
   }
 
   &__container {

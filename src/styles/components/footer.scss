@@ -1,14 +1,39 @@
 .footer {
+  --mi-footer-background: #222;
+  --mi-footer-text-color: #c8c8c8;
+
   position: relative;
-  background: #e7e7e7;
+  background: var(--mi-footer-background);
 
   &__container {
-    width: min(13200px, 100% - 3rem);
+    width: var(--mi-container-width);
     margin-inline: auto;
   }
 
   &__content {
     padding: 1rem 0;
-    text-align: center;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    gap: 1rem 2rem;
+  }
+
+  &__description {
+    color: var(--mi-footer-text-color);
+    font-feature-settings: 'lnum';
+  }
+
+  &__links {
+    a {
+      color: var(--mi-footer-text-color);
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }

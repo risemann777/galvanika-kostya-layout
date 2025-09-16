@@ -1,15 +1,20 @@
 :root {
   --mi-body-font-family: "Raleway", sans-serif;
   --mi-body-font-size: 1rem;
+  --mi-plane-text-font-size: 1rem;
   --mi-body-font-weight: 400;
   --mi-body-line-height: 1.4;
   --mi-viewport-height: 100vh;
   --mi-foreground: #212529;
   --mi-background: #E5E4E4;
+  --mi-background-primary: #E5E4E4;
+  --mi-background-secondary: rgb(235 235 235 / 100%);
   --mi-container-size: 1440px;
+  --mi-container-size-narrow: 1160px;
   --mi-container-padding: 2.5rem;
   --mi-container-width: min(var(--mi-container-size), 100% - var(--mi-container-padding));
-  --mi-corporate-red: var(--mi-color-scarlet);
+  --mi-container-width-narrow: min(var(--mi-container-size-narrow), 100% - var(--mi-container-padding));
+  --mi-corporate-red: #dc3545;
   --mi-corporate-yellow: #ff9100;
   --mi-heading-font-family: var(--mi-body-font-family);
   --mi-code-color: #d63384;
@@ -42,6 +47,10 @@
   --mi-backdrop-opacity: 0.5;
   --mi-image-placeholder-bg: rgb(0 0 0 / 20%);
   --mi-card-bg: rgb(255 255 255 / 100%);
+
+  @media(width >= 1280px) {
+    --mi-plane-text-font-size: 1.25rem;
+  }
 
   @media(width >= 1024px) {
     --mi-container-padding: 5rem;

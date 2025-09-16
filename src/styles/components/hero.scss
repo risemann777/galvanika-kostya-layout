@@ -84,7 +84,7 @@
   --mi-hero-slide-grid-template-columns: initial;
   --mi-hero-slide-grid-template-rows: repeat(6, minmax(0, 1fr));
   --mi-hero-slide-gap: 4rem;
-  --mi-hero-slide-divider-width: 70%;
+  --mi-hero-slide-divider-width: 80%;
   --mi-hero-slide-divider-height: 1px;
   --mi-hero-slide-devider-bottom: calc(var(--mi-hero-slide-gap) / 2 * -1);
   --mi-hero-slide-devider-transform: translateX(50%);
@@ -120,7 +120,7 @@
     --mi-hero-slide-grid-template-rows: initial;
     --mi-hero-slide-gap: 4rem;
     --mi-hero-slide-divider-width: 1px;
-    --mi-hero-slide-divider-height: 70%;
+    --mi-hero-slide-divider-height: 80%;
     --mi-hero-slide-devider-bottom: 50%;
     --mi-hero-slide-devider-transform: translateY(50%);
     --mi-hero-slide-divider-right: calc(var(--mi-hero-slide-gap) / 2 * -1);

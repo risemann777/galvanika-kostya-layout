@@ -1,0 +1,102 @@
+.stage {
+  --mi-stage-num-size: 2.5rem;
+  --mi-stage-name-font-size: 1.5rem;
+  --mi-stage-list-gap: 1.5rem;
+  --mi-stage-list-grid-template-columns: initial;
+  --mi-stage-info-padding-top: 0.25rem;
+  --mi-stage-num-font-size: 1.25rem;
+
+  @media(width >= 1024px) {
+    --mi-stage-list-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-stage-list-gap: 2.5rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-stage-num-size: 3.5rem;
+    --mi-stage-name-font-size: 1.75rem;
+    --mi-stage-info-padding-top: 0.5rem;
+    --mi-stage-num-font-size: 1.5rem;
+  }
+
+  &__container {
+    width: var(--mi-container-width-narrow);
+    margin-inline: auto;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 2.5rem;
+    gap: 1.25rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--mi-heading-h2-font-size);
+    text-align: center;
+  }
+
+  &__description {
+    max-width: 1160px;
+    color: var(--mi-color-gray);
+    font-size: var(--mi-plane-text-font-size);
+    text-align: center;
+  }
+  
+  &__list {
+    display: grid;
+    gap: var(--mi-stage-list-gap);
+    grid-template-columns: var(--mi-stage-list-grid-template-columns);
+  }
+
+  &__empty {
+    color: var(--mi-color-gray);
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    counter-increment: numbers;
+    gap: 1.25rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--mi-stage-info-padding-top);
+    gap: 0.5rem;
+  }
+
+  &__num {
+    display: flex;
+    width: var(--mi-stage-num-size);
+    height: var(--mi-stage-num-size);
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--mi-corporate-red);
+    border-radius: 50%;
+    font-feature-settings: "lnum";
+    font-size: 1.25rem;
+
+    &::after {
+      content: counter(numbers);
+      font-size: var(--mi-stage-num-font-size);
+      line-height: 1;
+      font-weight: 500;
+    }
+  }
+  
+  &__name {
+    margin: 0;
+    font-feature-settings: "lnum";
+    font-size: var(--mi-stage-name-font-size);
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-size: var(--mi-plane-text-font-size);
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,22 @@
+mixin stage(data)
+  - title = data?.title || null
+  - description = data?.description || null
+  - list = data?.list || null
+
+  .stage
+    .stage__container
+      if title || description
+        .stage__head
+          h2.stage__title=title
+          if description
+            .stage__description=description
+      .stage__list
+        if list && list.length
+          each item, index in list
+            - name = item?.name || `Edge item name #${index+1}`
+            - text = item?.text || `Lorem ipsum sit amet`
+            .stage__item
+              .stage__num
+              .stage__info
+                h3.stage__name=name
+                .stage__text=text

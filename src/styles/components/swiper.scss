@@ -23,7 +23,7 @@
 .swiper-pagination-bullet {
   &-active {
     --swiper-pagination-bullet-width: 2rem;
-    --swiper-pagination-color: var(--mi-color-cardinal);
+    --swiper-pagination-color: var(--mi-corporate-red);
 
     @media(width >= 576px) {
       --swiper-pagination-bullet-width: 3rem;
