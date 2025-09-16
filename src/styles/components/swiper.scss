@@ -24,10 +24,6 @@
   &-active {
     --swiper-pagination-bullet-width: 1.5rem;
     --swiper-pagination-color: var(--mi-corporate-red);
-
-    @media(width >= 576px) {
-      --swiper-pagination-bullet-width: 2.5rem;
-    }
   }
 }
 
