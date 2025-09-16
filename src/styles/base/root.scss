@@ -13,7 +13,8 @@
   --mi-container-size-narrow: 1160px;
   --mi-container-padding: 2.5rem;
   --mi-container-width: min(var(--mi-container-size), 100% - var(--mi-container-padding));
-  --mi-container-width-narrow: min(var(--mi-container-size-narrow), 100% - var(--mi-container-padding));
+  --mi-container-narrow-width: min(var(--mi-container-size-narrow), 100% - var(--mi-container-padding));
+  --mi-container-fluid-width: min(100% - var(--mi-container-padding));
   --mi-corporate-red: #dc3545;
   --mi-corporate-yellow: #ff9100;
   --mi-heading-font-family: var(--mi-body-font-family);
@@ -39,7 +40,7 @@
   --mi-legend-font-size: 1rem;
   --mi-legend-font-weight: 500;
   --mi-header-border-color: #000;
-  --mi-input-border-color: #dfdfdf;
+  --mi-input-border-color: #212529;
   --mi-border-width: 1px;
   --mi-box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
   --mi-border-color-translucent: rgb(0 0 0 / 15%);

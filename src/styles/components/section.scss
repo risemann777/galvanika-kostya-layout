@@ -5,6 +5,8 @@
   --mi-section-head-margin: 0 0 2rem;
 
   @media(width >= 1280px) {
+    --mi-section-container-padding-top: 4rem;
+    --mi-section-container-padding-bottom: 4rem;
     --mi-section-title-font-size: 4rem;
     --mi-section-head-margin: 0 0 3rem;
   }
@@ -13,11 +15,22 @@
     background: var(--mi-background-secondary);
   }
 
-  &__container {
-    width: var(--mi-container-width);
+  &__container, &__container-fluid, &__container-narrow {
     padding-top: var(--mi-section-container-padding-top);
     padding-bottom: var(--mi-section-container-padding-bottom);
     margin-inline: auto;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+  }
+
+  &__container-narrow {
+    width: var(--mi-container-narrow-width);
+  }
+
+  &__container-fluid {
+    width: var(--mi-container-fluid-width);
   }
 
   &__head {
@@ -25,7 +38,9 @@
   }
 
   &__title {
+    margin: 0;
     font-size: var(--mi-section-title-font-size);
+    line-height: 1.2;
     text-align: center;
   }
 }

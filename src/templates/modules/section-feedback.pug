@@ -1,0 +1,33 @@
+section.section.section--feedback
+  .section__container
+    .feedback
+      .feedback__container
+        .feedback__info
+          .feedback__title Расчет стоимости услуг
+          .feedback__description Оставьте заявку и получите предварительный расчет и консультацию.
+        .feedback__form
+          form(class="form")
+            .form__body
+              .form__field
+                .form__input
+                  label
+                    span.form__label
+                    input(type="text" name="user_name" placeholder="Имя / Организация *" class="form__control")
+              .form__field
+                .form__input
+                  label
+                    span.form__label
+                    input(type="text" name="user_phone" placeholder="Телефон *" class="form__control")
+              .form__field
+                .form__input
+                  label
+                    span.form__label Комментарий
+                    textarea(name="user_comment" class="form__control form__control--textarea" placeholder="Комментарий")
+            .form__footer
+              input(type="submit" name="submit" class="btn btn--red" value="Отправить")
+              .form__policy
+                .checkbox.checkbox--policy
+                  label
+                    input(type="checkbox" name="policy")
+                    span.checkbox__cr
+                    span.checkbox__text Отправляя форму я соглашаюсь с <a href="policy.html">политикой обработки персональных данных</a>

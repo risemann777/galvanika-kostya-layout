@@ -19,7 +19,7 @@
   }
 
   &__container {
-    width: var(--mi-container-width-narrow);
+    width: var(--mi-container-narrow-width);
     margin-inline: auto;
   }
 
@@ -83,8 +83,8 @@
     &::after {
       content: counter(numbers);
       font-size: var(--mi-stage-num-font-size);
-      line-height: 1;
       font-weight: 500;
+      line-height: 1;
     }
   }
   

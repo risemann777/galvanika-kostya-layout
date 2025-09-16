@@ -1,13 +1,36 @@
 .form {
-  --mi-form-control-font-size: 1rem;
-  --mi-form-control-border-radius: var(--mi-border-radius);
+  --mi-form-title-font-size: 1.25rem;
+  --mi-form-subtitle-font-size: 0.875rem;
+  --mi-form-policy-font-size: 0.875rem;
+  --mi-form-control-border-radius: 0;
   --mi-form-control-border-width: 1px;
-  --mi-form-control-placeholder-color: rgb(255 255 255 / 20%);
-  --mi-form-control-hover-placeholder-color: rgb(255 255 255 / 50%);
-  --mi-form-control-border-focus-color: blue;
-  --mi-form-control-border-color: var(--mi-input-border-color);
+  --mi-form-control-border-color: rgb(33 37 41 / 40%);
+  --mi-form-control-border-focus-color: rgb(33 37 41 / 100%);
+  --mi-form-control-padding: 0.5rem 0 0.85rem;
+  --mi-form-control-font-size: 1rem;
+  --mi-form-control-placeholder-color: rgb(0 0 0 / 30%);
+  --mi-form-control-hover-placeholder-color: rgb(0 0 0 / 50%);
+  --mi-form-control-border-error-color: var(--mi-color-red);
   --mi-form-control-input-error-color: var(--mi-color-red);
   --mi-form-control-input-error-font-size: 0.875rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  @media(width >= 1024px) {
+    --mi-form-title-font-size: 1.75rem;
+    --mi-form-control-font-size: 1.25rem;
+  }
+
+  @media(width >= 1366px) {
+    --mi-form-title-font-size: 2.25rem;
+    --mi-form-subtitle-font-size: 1.25rem;
+  }
+
+  @media(width >= 1920px) {
+    --mi-form-title-font-size: 3.25rem;
+  }
 
   &__header {
     display: flex;
@@ -15,21 +38,78 @@
     gap: 0.625rem;
   }
 
+  &__title {
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-form-title-font-size);
+    line-height: 1.16;
+  }
+
+  &__subtitle {
+    color: var(--mi-color-gray);
+    font-size: var(--mi-form-subtitle-font-size);
+    line-height: 1.28;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__errors {
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--mi-color-red);
+    color: var(--mi-color-red);
+    font-size: 0.875rem;
+    text-align: center;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__policy {
+    display: flex;
+    flex-direction: column;
+    color: var(--mi-color-gray);
+    font-size: var(--mi-form-policy-font-size);
+    gap: 0.5rem;
+    line-height: 1.3;
+
+    a {
+      color: var(--mi-color-gray);
+      text-decoration: underline;
+    }
+
+    p {
+      margin: 0 0 0.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &__field {
-    margin: 0 0 1rem;
+    margin: 0 0 0.25rem;
   }
 
   &__control {
     position: relative;
     display: block;
     width: 100%;
-    padding: 0.5rem 1rem;
-    border: var(--mi-form-control-border-width) solid var(--mi-form-control-border-color);
-    border-radius: var(--mi-border-radius);
+    padding: var(--mi-form-control-padding);
+    border-width: var(--mi-form-control-border-width);
+    border-style: solid;
+    border-color: transparent transparent var(--mi-form-control-border-color) transparent;
+    border-radius: var(--mi-form-control-border-radius);
     appearance: none;
     background-clip: padding-box;
     background-color: transparent;
     color: var(--mi-foreground);
+    font-feature-settings: 'lnum';
     font-size: var(--mi-form-control-font-size);
     font-weight: var(--mi-body-font-weight);
     line-height: 1.5;
@@ -41,7 +121,7 @@
     }
 
     &:focus {
-      border-color: var(--mi-form-control-border-focus-color);
+      border-bottom-color: var(--mi-form-control-border-focus-color);
       outline: 0;
     }
 
@@ -50,20 +130,46 @@
         color: var(--mi-form-control-hover-placeholder-color);
       }
     }
+
+    &--error {
+      border: 1px solid red;
+
+      &:focus, &:hover {
+        border: 1px solid red;
+      }
+    }
+  }
+
+  &__captcha {
+    margin: 1.25rem 0;
+
+    &-title {
+      margin: 0 0 0.5rem;
+      color: var(--mi-color-gray);
+      font-size: var(--mi-form-control-font-size);
+    }
+  }
+
+  &__ok {
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--mi-color-green);
+    color: var(--mi-color-green);
+    font-size: var(--mi-form-control-font-size);
+    text-align: center;
   }
 
   &__label {
-    display: block;
-    margin: 0 0 0.375rem;
+    display: none;
     color: var(--mi-foreground);
     cursor: default;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
+    opacity: 0.5;
+    pointer-events: none;
   }
 
   &__row {
     display: grid;
-    margin: 0 0 20px;
     grid-gap: 20px;
 
     @media (width >= 1400px) {
@@ -79,6 +185,11 @@
 
   &__input {
     position: relative;
+    padding-bottom: 1.5rem;
+
+    label {
+      width: 100%;
+    }
 
     &--textarea {
       .form {
@@ -88,7 +199,7 @@
         }
 
         &__control {
-          min-height: 100px;
+          min-height: 200px;
         }
       }
     }
@@ -107,11 +218,18 @@
     }
 
     &--error {
-      --mi-form-control-border-color: var(--mi-color-red);
-      --mi-form-control-border-focus-color: var(--mi-color-red);
+      .form {
+        &__control {
+          border-bottom-color: var(--mi-form-control-border-error-color);
+        }
+      }
     }
 
-    &-error-text {
+    &-error {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
       color: var(--mi-form-control-input-error-color);
       font-size: var(--mi-form-control-input-error-font-size);
     }
@@ -123,28 +241,11 @@
     align-items: center;
     justify-content: center;
 
-    &--success {
+    &-success {
       padding: 20px;
       border: 1px solid var(--mi-foreground);
       margin-top: 30px;
       text-align: center;
     }
-  }
-
-  &__bottom {
-    display: flex;
-    flex-direction: column;
-    margin: 40px 0 0;
-    row-gap: 30px;
-  }
-
-  &__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  label {
-    width: 100%;
   }
 }
