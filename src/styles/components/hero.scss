@@ -1,4 +1,5 @@
 .hero {
+  --mi-hero-padding-top: 0 0 3rem;
   --mi-hero-padding: 0 0 3rem;
   --mi-hero-height: calc(var(--mi-viewport-height) - 250px);
   --mi-hero-container-padding: 3rem;
@@ -12,7 +13,7 @@
   }
 
   @media(width >= 768px) {
-    --mi-hero-height: calc(var(--mi-viewport-height) - 300px);
+    --mi-hero-height: calc(var(--mi-viewport-height) - 200px);
   }
 
   @media(width >= 1024px) {
