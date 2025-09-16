@@ -1,8 +1,9 @@
 .checkbox {
-  --mi-checkbox-color: #000;
+  --mi-checkbox-text-color: var(--mi-foreground, #000);
   --mi-checkbox-size: 20px;
   --mi-checkbox-border-radius: 0;
-  --mi-checkbox-font-size: 1rem;
+  --mi-checkbox-icon-font-size: 1rem;
+  --mi-checkbox-text-font-size: 1rem;
   --mi-checkbox-checked-color: var(--mi-corporate-red);
   --mi-checkbox-hover-color: var(--mi-corporate-red);
   --mi-checkbox-border-color: var(--mi-foreground);
@@ -11,7 +12,7 @@
   font-size: 20px;
 
   &--policy {
-    --mi-checkbox-font-size: 0.875rem;
+    --mi-checkbox-text-font-size: 0.875rem;
   }
 
   &__cr {
@@ -65,7 +66,7 @@
           display: inline-block;
           color: #fff;
           content: "✓";
-          font-size: 10px;
+          font-size: var(--mi-checkbox-icon-font-size);
           line-height: 1.2;
         }
       }
@@ -73,8 +74,9 @@
   }
 
   &__text {
-    color: var(--mi-checkbox-color);
-    font-size: var(--mi-checkbox-font-size);
+    color: var(--mi-checkbox-text-color, #000);
+    font-feature-settings: 'lnum';
+    font-size: var(--mi-checkbox-text-font-size);
     line-height: 1.5;
 
     a, span {
@@ -82,8 +84,7 @@
     }
 
     a {
-      color: var(--mi-foreground);
-      text-decoration: none;
+      text-decoration: underline;
 
       &:hover {
         text-decoration: underline;
