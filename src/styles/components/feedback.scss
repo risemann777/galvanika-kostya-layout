@@ -14,12 +14,19 @@
 
   &__container {
     display: grid;
-    gap: 1rem 3rem;
+    gap: 2rem 3rem;
     grid-template-columns: var(--mi-feedback-container-grid-template-columns);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   &__title {
     font-size: var(--mi-feedback-title-font-size);
+    line-height: 1.1;
   }
 
   &__description {
