@@ -100,19 +100,20 @@
   --mi-hero-slide-content-width: 700px;
   --mi-hero-slide-name-font-size: 2rem;
   --mi-hero-slide-name-text-align: center;
-  --mi-hero-slide-description-font-size: 1rem;
+  --mi-hero-slide-text-font-size: 1rem;
+  --mi-hero-slide-btn-width: 100%;
 
   position: relative;
 
   @media(width >= 576px) {
     --mi-hero-slide-content-padding: 2rem 3rem;
     --mi-hero-slide-name-font-size: 2.5rem;
-    --mi-hero-slide-description-font-size: 1.25rem;
+    --mi-hero-slide-text-font-size: 1.25rem;
   }
 
   @media(width >= 992px) {
     --mi-hero-slide-name-font-size: 3.5rem;
-    --mi-hero-slide-description-font-size: 1.5rem;
+    --mi-hero-slide-text-font-size: 1.5rem;
     --mi-hero-slide-content-padding: 2.5rem 3rem;
   }
 
@@ -134,6 +135,7 @@
     --mi-hero-slide-content-bg: transparent;
     --mi-hero-slide-content-width: auto;
     --mi-hero-slide-name-text-align: left;
+    --mi-hero-slide-btn-width: auto;
   }
 
   &__container {
@@ -214,6 +216,18 @@
     }
   }
 
+  &__action {
+    .btn {
+      width: var(--mi-hero-slide-btn-width);
+    }
+  }
+
+  &__link {
+    color: var(--mi-corporate-red);
+    font-size: var(--mi-hero-slide-text-font-size);
+    font-weight: 500;
+  }
+
   &__name {
     font-size: var(--mi-hero-slide-name-font-size);
     font-weight: 400;
@@ -222,7 +236,7 @@
   }
 
   &__description {
-    font-size: var(--mi-hero-slide-description-font-size);
+    font-size: var(--mi-hero-slide-text-font-size);
 
     p {
       &:last-child {
